@@ -85,6 +85,7 @@ multiply(4, 3, function (answer) {
 */
 
 //Code Here
+function contains(arr,name,cb)
 
 // Do not edit the code below.
 contains(names, 'Colt', function (result) {
@@ -104,7 +105,22 @@ contains(names, 'Colt', function (result) {
 */
 
 //Code Here
+function uniq(arr,cb){
 
+  // this walks through the indices of the arr array
+  for (let i = 0; i < arr.length; i++){
+    // this should walk through the comparison of the array
+    for (let j = i + 1; j < arr.length; j++){
+      // this does the comparison
+      if(arr[i] === arr[j]){
+        // this should remove the value at i if equal to j
+      arr.splice(j,1)    
+      j--
+    } 
+  }
+}
+return cb(arr)
+}
 // Do not edit the code below.
 uniq(names, function (uniqArr) {
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
