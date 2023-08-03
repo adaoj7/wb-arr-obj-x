@@ -80,8 +80,9 @@ var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 */
 
 //Code Here
-const numEven = []
+
 function evenFinder(nums){
+  const numEven = []
   for (let i = 0; i < nums.length; i++)
   if (nums[i]%2 === 0){
     numEven.push(nums[i])
@@ -105,7 +106,7 @@ var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 
 //Code Here
 function divider(numbersArray){
-  
+
 }
 ////////// PROBLEM 7 //////////
 
