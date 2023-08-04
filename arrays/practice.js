@@ -18,8 +18,8 @@ var arr = [10, 20, 30];
 */
 
 //Code Here
-function first(arr){
- return arr[0]
+function first(arr) {
+  return arr[0];
 }
 ////////// PROBLEM 2 //////////
 
@@ -33,13 +33,13 @@ var arr = [40, 50, 60];
 */
 
 //Code Here
-function last(arr){
-  return arr[arr.length - 1]
+function last(arr) {
+  return arr[arr.length - 1];
 }
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
-var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
+var family = ["Tyler", "Jordyn", "Ryan", "Chelsey", "Ireland"];
 // Do not edit the code above.
 
 /*
@@ -48,14 +48,13 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-function looper(family){
-  for (let i = 0; i < family.length; i++)
-    alert(family[i]) 
+function looper(family) {
+  for (let i = 0; i < family.length; i++) alert(family[i]);
 }
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
-var letters = ['A', 'B', 'C', 'D', 'E'];
+var letters = ["A", "B", "C", "D", "E"];
 // Do not edit the code above.
 
 /*
@@ -64,10 +63,9 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-const reversedLooper = function(letters){
-  for (let i = letters.length - 1; i >= 0; i--)
-    alert(letters[i]) 
-}
+const reversedLooper = function (letters) {
+  for (let i = letters.length - 1; i >= 0; i--) alert(letters[i]);
+};
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
@@ -81,13 +79,13 @@ var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 
 //Code Here
 
-function evenFinder(nums){
-  const numEven = []
+function evenFinder(nums) {
+  const numEven = [];
   for (let i = 0; i < nums.length; i++)
-  if (nums[i]%2 === 0){
-    numEven.push(nums[i])
-  }
-  return numEven
+    if (nums[i] % 2 === 0) {
+      numEven.push(nums[i]);
+    }
+  return numEven;
 }
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
 ////////// MOVE ONTO NEXT SECTION BEFORE WORKING ON THESE ////////////////
@@ -105,7 +103,17 @@ var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 */
 
 //Code Here
-function divider(numbersArray){
+function divider(numbersArray) {
+  const evensArray = [];
+  const oddsArray = [];
+  for (let i = 0; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 === 0) {
+      evensArray.push(numbersArray[i]);
+    } else {
+      oddsArray.push(numbersArray[i]);
+    }
+  }
+  return [evensArray, oddsArray];
 
 }
 ////////// PROBLEM 7 //////////
@@ -117,7 +125,7 @@ var getRandomArbitrary = function () {
 // Do not edit the code above.
 
 /* 
-  var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
   Write a function named finder that will take in an array as an argument.
@@ -127,11 +135,25 @@ var getRandomArbitrary = function () {
 */
 
 //Code Here
-
+function finder(numbers) {
+  //creating randomNumber variable
+  let randomNumber = getRandomArbitrary();
+  //looping through the array
+  // for (let i = numbers.length - 1; i >= 0; i--){
+  for (let i = 0; i < numbers.length; i++){
+    //comparing the value at given spot in array
+    // console.log(i)
+    if (numbers[i] === randomNumber) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var myGroceryList = ["chips", "pizza", "hotpockets", "MtnDew", "corndogs"];
 // Do not edit the code above.
 
 /*
@@ -166,7 +188,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 ////////// PROBLEM 10 //////////
 
 // Do not edit the code below.
-var numbers = [5, '9', 16, 19, '25', '34', 48];
+var numbers = [5, "9", 16, 19, "25", "34", 48];
 // Do not edit the code above.
 
 /*
@@ -216,27 +238,27 @@ for (var i = 0; i < num2; i++) {
 var devMountainEmployees = [];
 
 var joe = {
-  name: 'Joe',
-  position: 'Instructor',
-  spiritAnimal: 'Honey Badger',
+  name: "Joe",
+  position: "Instructor",
+  spiritAnimal: "Honey Badger",
 };
 
 var cahlan = {
-  name: 'Cahlan',
-  position: 'CEO',
-  spiritAnimal: 'butterfly',
+  name: "Cahlan",
+  position: "CEO",
+  spiritAnimal: "butterfly",
 };
 
 var ryan = {
-  name: 'Ryan',
-  position: 'Marketing',
-  spiritAnimal: 'fox',
+  name: "Ryan",
+  position: "Marketing",
+  spiritAnimal: "fox",
 };
 
 var colt = {
-  name: 'Colt',
-  position: 'Everything really',
-  spiritAnimal: 'Young Male Horse',
+  name: "Colt",
+  position: "Everything really",
+  spiritAnimal: "Young Male Horse",
 };
 // Do not edit the code above.
 
@@ -275,10 +297,10 @@ var colt = {
 
 // Do not edit the code below.
 var user1 = {
-  name: 'Mark McIver',
-  email: 'mark.mciver@devmounta.in',
-  password: 'hunter2',
-  username: 'ihazcode',
+  name: "Mark McIver",
+  email: "mark.mciver@devmounta.in",
+  password: "hunter2",
+  username: "ihazcode",
 };
 // Do not edit the code above.
 
