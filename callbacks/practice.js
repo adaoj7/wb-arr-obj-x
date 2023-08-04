@@ -28,14 +28,14 @@
 */
 
 // Code Here
-function first(arr,cb){
-  cb(arr[0])
+function first(arr, cb) {
+  cb(arr[0]);
 }
 // Do not edit the code below.
-var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 
 first(names, function (firstName) {
-  console.log('The first name in names is ' + firstName);
+  console.log("The first name in names is " + firstName);
   return firstName;
 });
 // Do not edit the code above.
@@ -48,12 +48,12 @@ first(names, function (firstName) {
 */
 
 //Code Here
-function last(arr,cb){
-  cb(arr[arr.length - 1])
+function last(arr, cb) {
+  cb(arr[arr.length - 1]);
 }
 // Do not edit the code below.
 last(names, function (lastName) {
-  console.log('The last name in names is ' + lastName);
+  console.log("The last name in names is " + lastName);
   return lastName;
 });
 // Do not edit the code above.
@@ -66,12 +66,12 @@ last(names, function (lastName) {
 */
 
 //Code Here
-function multiply(num1,num2,cb){
-  cb(num1*num2)
+function multiply(num1, num2, cb) {
+  cb(num1 * num2);
 }
 // Do not edit the code below.
 multiply(4, 3, function (answer) {
-  console.log('The answer is ' + answer); //should console.log 12
+  console.log("The answer is " + answer); //should console.log 12
 });
 // Do not edit the code above.
 
@@ -85,14 +85,22 @@ multiply(4, 3, function (answer) {
 */
 
 //Code Here
-function contains(arr,name,cb)
+function contains(arr, nam1, cb) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === nam1) {
+      cb(true)
+    } else {
+      cb(false)
+    }
+  }
+}
 
 // Do not edit the code below.
-contains(names, 'Colt', function (result) {
+contains(names, "Colt", function (result) {
   if (result === true) {
-    console.log('Colt is in the array');
+    console.log("Colt is in the array");
   } else {
-    console.log('Colt is not in the array');
+    console.log("Colt is not in the array");
   }
 });
 // Do not edit the code above.
@@ -105,25 +113,27 @@ contains(names, 'Colt', function (result) {
 */
 
 //Code Here
-function uniq(arr,cb){
-
+function uniq(arr, cb) {
   // this walks through the indices of the arr array
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     // this should walk through the comparison of the array
-    for (let j = i + 1; j < arr.length; j++){
+    for (let j = i + 1; j < arr.length; j++) {
       // this does the comparison
-      if(arr[i] === arr[j]){
+      if (arr[i] === arr[j]) {
         // this should remove the value at i if equal to j
-      arr.splice(j,1)    
-      j--
-    } 
+        arr.splice(j, 1);
+        j--;
+      }
+    }
   }
-}
-return cb(arr)
+  return cb(arr);
 }
 // Do not edit the code below.
 uniq(names, function (uniqArr) {
-  console.log('The new names array with all the duplicate items removed is ', uniqArr);
+  console.log(
+    "The new names array with all the duplicate items removed is ",
+    uniqArr
+  );
 });
 // Do not edit the code above.
 
@@ -135,10 +145,16 @@ uniq(names, function (uniqArr) {
 */
 
 //Code Here
+function each(arr,cb){
+  for (let i = 0; i < arr.length; i++){
+    cb(arr[i],i)
+  }
+
+}
 
 // Do not edit the code below.
 each(names, function (item, indice) {
-  console.log('The item in the ' + indice + ' position is ' + item);
+  console.log("The item in the " + indice + " position is " + item);
 });
 // Do not edit the code above.
 
@@ -146,41 +162,50 @@ each(names, function (item, indice) {
 
 /*
   Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
-  When the correct user object is found, invoke the callback with the user object as an argument.
+  When the correct user object is found, invoke the callback with the users object as an argument.
 */
 
 // Code here
-
+function getUserById(arr,id,cb){
+//runs through all of the id's
+  for (let i = 0; i < arr.length; i++){
+    //checks if any given value in the array equals the id passed in as a parameter
+    if (arr[i].id === id){
+      //this should invoke the cb
+      return cb(arr[i])
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
-    id: '12d',
-    email: 'tyler@gmail.com',
-    name: 'Tyler',
-    address: '167 East 500 North',
+    id: "12d",
+    email: "tyler@gmail.com",
+    name: "Tyler",
+    address: "167 East 500 North",
   },
   {
-    id: '15a',
-    email: 'cahlan@gmail.com',
-    name: 'Cahlan',
-    address: '135 East 320 North',
+    id: "15a",
+    email: "cahlan@gmail.com",
+    name: "Cahlan",
+    address: "135 East 320 North",
   },
   {
-    id: '16t',
-    email: 'ryan@gmail.com',
-    name: 'Ryan',
-    address: '192 East 32 North',
+    id: "16t",
+    email: "ryan@gmail.com",
+    name: "Ryan",
+    address: "192 East 32 North",
   },
 ];
 
-getUserById(users, '16t', function (user) {
+getUserById(users, "16t", function (user) {
   console.log(
-    'The user with the id 16t has the email of ' +
+    "The user with the id 16t has the email of " +
       user.email +
-      ' the name of ' +
+      " the name of " +
       user.name +
-      ' and the address of ' +
-      user.address,
+      " and the address of " +
+      user.address
   );
 });
 // Do not edit the code above.
